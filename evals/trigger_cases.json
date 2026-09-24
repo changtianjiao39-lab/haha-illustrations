@@ -1,0 +1,33 @@
+{
+  "recommended_threshold": 0.6,
+  "description_required_concepts": ["article", "personal_ip", "pet", "image_action", "style"],
+  "positive_concepts": {
+    "article": ["公众号", "文章", "长文", "内容帖子"],
+    "personal_ip": ["HaHa", "我的形象", "哈哈大王", "蓝衣卡通形象"],
+    "pet": ["灰猫", "猫咪", "小猫"],
+    "image_action": ["配图", "插图", "生图", "画", "封面", "试图"],
+    "style": ["蜡笔", "Agent Space 插图风格", "我喜欢的画风", "手绘"]
+  },
+  "negative_patterns": ["不用我的形象", "不要 HaHa", "不要猫咪", "只写文章", "不要生成图片"],
+  "should_trigger": [
+    {"text": "用我的 HaHa 形象和灰猫给这篇公众号文章做一张配图", "family": "direct"},
+    {"text": "按我喜欢的画风画这篇公众号文章，要有我的形象和猫咪", "family": "style"},
+    {"text": "这篇长文用哈哈大王和灰猫做蜡笔插图", "family": "article"},
+    {"text": "请为公众号正文做一张 HaHa 与猫咪互动的手绘试图", "family": "trial"},
+    {"text": "用蓝衣卡通形象和小猫画这篇文章的配图", "family": "identity"},
+    {"text": "Agent Space 插图风格，用 HaHa 和猫咪为这篇文章配图", "family": "reference"}
+  ],
+  "should_not_trigger": [
+    {"text": "帮我只写文章，不要生成图片", "family": "writing"},
+    {"text": "做一组通用 APP 矢量图标", "family": "generic-icon"},
+    {"text": "生成一张真人肖像照", "family": "portrait"},
+    {"text": "不用我的形象，给公众号做一张极简摄影封面", "family": "explicit-exclusion"},
+    {"text": "请分析 Agent Space 的价格和额度是否属实", "family": "research"}
+  ],
+  "near_neighbor": [
+    {"text": "给文章找几张配图素材", "family": "asset-search"},
+    {"text": "用我的形象设计一个 3D 玩偶", "family": "different-output"},
+    {"text": "这篇公众号文章需要一个通用封面", "family": "generic-cover"},
+    {"text": "画一只灰猫表情包", "family": "pet-only"}
+  ]
+}

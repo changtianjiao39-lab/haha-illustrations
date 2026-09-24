@@ -1,0 +1,100 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-09-24",
+  "package": {
+    "name": "haha-illustrations",
+    "version": "0.3.0",
+    "owner": "changtianjiao39-lab",
+    "maturity_tier": "production",
+    "lifecycle_stage": "public",
+    "upstream_inspiration": "https://github.com/dorlarosendo434-hub/crayon-girl-illustrations",
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为用户的公众号文章、中文长文和内容帖子设计或生成带 HaHa 蓝衣卡通形象与灰猫的蜡笔手绘配图。适用于文章配图规划、单张试图、整组正文插图、封面、局部改图、按文案转视觉隐喻，以及用户说“用我的形象和猫咪配图”“按我喜欢的 Agent Space 插图风格来画”“背景不要抢主体”等任务。固定人物和猫咪身份，以人物行动、猫咪配合、实体场景道具与少量文字共同解释文案；默认公众号 16:9 横图，先守角色与内容一致性，再守留白、色彩和蜡笔质感。不用于普通文章写作、通用图标生成、复刻参考图原场景或未经要求的公开发布。",
+    "job_to_be_done": "为用户的公众号文章、中文长文和内容帖子设计或生成带 HaHa 蓝衣卡通形象与灰猫的蜡笔手绘配图。适用于文章配图规划、单张试图、整组正文插图、封面、局部改图、按文案转视觉隐喻，以及用户说“用我的形象和猫咪配图”“按我喜欢的 Agent Space 插图风格来画”“背景不要抢主体”等任务。固定人物和猫咪身份，以人物行动、猫咪配合、实体场景道具与少量文字共同解释文案；默认公众号 16:9 横图，先守角色与内容一致性，再守留白、色彩和蜡笔质感。不用于普通文章写作、通用图标生成、复刻参考图原场景或未经要求的公开发布。",
+    "target_users": [
+      "需要 HaHa 与灰猫文章配图的创作者"
+    ],
+    "inputs": [],
+    "outputs": [],
+    "exclusions": [],
+    "local_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "用我的 HaHa 形象和灰猫给这篇公众号文章做一张配图",
+      "按我喜欢的画风画这篇公众号文章，要有我的形象和猫咪",
+      "这篇长文用哈哈大王和灰猫做蜡笔插图",
+      "请为公众号正文做一张 HaHa 与猫咪互动的手绘试图",
+      "用蓝衣卡通形象和小猫画这篇文章的配图",
+      "Agent Space 插图风格，用 HaHa 和猫咪为这篇文章配图"
+    ],
+    "should_not_trigger": [
+      "帮我只写文章，不要生成图片",
+      "做一组通用 APP 矢量图标",
+      "生成一张真人肖像照",
+      "不用我的形象，给公众号做一张极简摄影封面",
+      "请分析 Agent Space 的价格和额度是否属实"
+    ],
+    "near_neighbor": [
+      "给文章找几张配图素材",
+      "用我的形象设计一个 3D 玩偶",
+      "这篇公众号文章需要一个通用封面",
+      "画一只灰猫表情包"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references/character-and-pet.md",
+      "references/copy-to-composition.md",
+      "references/design-analysis.md",
+      "references/generation-and-qa.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals/trigger_cases.json"
+    ],
+    "reports": [
+      "reports/creation-handoff.md",
+      "reports/prior-art-research.md",
+      "reports/skill-ir.json",
+      "reports/trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": [
+      "openai",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "mode": "manual-or-explicit-context"
+    },
+    "execution": {
+      "context": "inline"
+    },
+    "trust": {
+      "source_tier": "user-local",
+      "private_assets": true
+    },
+    "permissions": {
+      "network": "none required for illustration workflow; verify time-sensitive public claims only when they will be asserted",
+      "file_write": "generated images in the active workspace only; no Obsidian Vault writes or public publishing"
+    },
+    "degradation": {}
+  },
+  "gates": {},
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

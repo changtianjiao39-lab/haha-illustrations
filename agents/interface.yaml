@@ -1,0 +1,21 @@
+interface:
+  display_name: "HaHa 与灰猫公众号配图"
+  short_description: "用个人卡通形象与灰猫，把公众号文案画成有互动的蜡笔插画"
+  default_prompt: "Use $haha-illustrations to read my Chinese article, select one visualizable idea, and generate one 16:9 warm crayon illustration with my HaHa character and gray cat. Let both act on the same story; keep the background quiet and verify identity, labels, and text-to-image meaning."
+  examples:
+    - "用我的 HaHa 形象和灰猫给这篇公众号文章配一张图"
+    - "按我喜欢的 Agent Space 插画调性，画这段文案"
+    - "先给我规划这篇文章的 4 张配图，不要生图"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets: ["openai", "agent-skills-compatible"]
+  activation:
+    mode: "manual-or-explicit-context"
+  execution:
+    context: "inline"
+  trust:
+    source_tier: "public-source"
+    private_assets: false
+  permissions:
+    network: "none required for illustration workflow; verify time-sensitive public claims only when they will be asserted"
+    file_write: "generated images in the active workspace only; no Obsidian Vault writes or public publishing"

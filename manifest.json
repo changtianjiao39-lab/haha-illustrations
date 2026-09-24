@@ -1,0 +1,21 @@
+{
+  "name": "haha-illustrations",
+  "version": "0.3.0",
+  "owner": "changtianjiao39-lab",
+  "updated_at": "2026-09-24",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "public",
+  "target_platforms": [
+    "codex",
+    "agent-skills-compatible"
+  ],
+  "privacy": "public character and pet references; user-provided new materials stay local unless separately authorized",
+  "upstream_inspiration": "https://github.com/dorlarosendo434-hub/crayon-girl-illustrations",
+  "release_gates": [
+    "local_package_validation",
+    "trigger_smoke_eval",
+    "asset_reference_check",
+    "manual_visual_review_per_image"
+  ]
+}

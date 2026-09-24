@@ -1,0 +1,229 @@
+{
+  "ok": true,
+  "threshold": 0.6,
+  "description_concepts": [
+    "article",
+    "image_action",
+    "personal_ip",
+    "pet",
+    "style"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "用我的 HaHa 形象和灰猫给这篇公众号文章做一张配图",
+        "family": "direct",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.8,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "按我喜欢的画风画这篇公众号文章，要有我的形象和猫咪",
+        "family": "style",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet",
+          "style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "这篇长文用哈哈大王和灰猫做蜡笔插图",
+        "family": "article",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet",
+          "style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "请为公众号正文做一张 HaHa 与猫咪互动的手绘试图",
+        "family": "trial",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet",
+          "style"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "用蓝衣卡通形象和小猫画这篇文章的配图",
+        "family": "identity",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.8,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "Agent Space 插图风格，用 HaHa 和猫咪为这篇文章配图",
+        "family": "reference",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip",
+          "pet",
+          "style"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "帮我只写文章，不要生成图片",
+        "family": "writing",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.2,
+        "matched_concepts": [
+          "article"
+        ],
+        "negative_pattern": "只写文章"
+      },
+      {
+        "prompt": "做一组通用 APP 矢量图标",
+        "family": "generic-icon",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "生成一张真人肖像照",
+        "family": "portrait",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "不用我的形象，给公众号做一张极简摄影封面",
+        "family": "explicit-exclusion",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.6,
+        "matched_concepts": [
+          "article",
+          "image_action",
+          "personal_ip"
+        ],
+        "negative_pattern": "不用我的形象"
+      },
+      {
+        "prompt": "请分析 Agent Space 的价格和额度是否属实",
+        "family": "research",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "给文章找几张配图素材",
+        "family": "asset-search",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.4,
+        "matched_concepts": [
+          "article",
+          "image_action"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "用我的形象设计一个 3D 玩偶",
+        "family": "different-output",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.2,
+        "matched_concepts": [
+          "personal_ip"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "这篇公众号文章需要一个通用封面",
+        "family": "generic-cover",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.4,
+        "matched_concepts": [
+          "article",
+          "image_action"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "画一只灰猫表情包",
+        "family": "pet-only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.4,
+        "matched_concepts": [
+          "image_action",
+          "pet"
+        ],
+        "negative_pattern": null
+      }
+    ]
+  }
+}
